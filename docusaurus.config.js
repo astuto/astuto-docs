@@ -73,8 +73,20 @@ const config = {
             title: 'Most useful pages',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Deploy with Docker',
+                to: '/self-hosted/deploy-with-docker',
+              },
+              {
+                label: 'OAuth Configuration Basics',
+                to: '/oauth/oauth-configuration-basics',
+              },
+              {
+                label: 'Common OAuth Providers',
+                to: '/oauth/common-oauth-providers',
+              },
+              {
+                label: 'Humane Features',
+                to: '/category/humane-features',
               },
             ],
           },
@@ -93,13 +105,17 @@ const config = {
                 label: 'Crowdin',
                 href: 'https://crwd.in/astuto',
               },
+              {
+                label: 'Product Hunt',
+                href: 'https://www.producthunt.com/products/astuto',
+              },
             ],
           },
           {
             title: 'About',
             items: [
               {
-                label: 'Astuto home page',
+                label: 'Astuto Home Page',
                 to: 'https://astuto.io',
               },
             ],
