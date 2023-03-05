@@ -57,11 +57,15 @@ The following is an example of a correctly configured OAuth provider with Discor
 If both the email and the name are successfully found, then the OAuth is configured correctly.
 
 :::danger Email is required
+
 If the email cannot be retrieved, then the OAuth provider cannot be used to log in and its configuration must be fixed.
+
 :::
 
 :::info Name is optional
+
 If the email is successfully found but the name is not, then the OAuth can be used to log in but users will have the name "Anonymous User".
+
 :::
 
 After you've tested that your OAuth configuration works as expected, remember to enable it from "Site Settings > Authentication".
