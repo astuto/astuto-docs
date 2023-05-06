@@ -46,7 +46,7 @@ This page contains tutorials for configuring some common OAuth providers.
    - **Scope**: email
    - **Profile URL**: https://discord.com/api/users/@me
    - **JSON path to user email**: email
-   - **JSON path to user name**: name
+   - **JSON path to user name**: username
 8. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Discord OAuth
 9. On Discord, navigate again to "OAuth2 > General"
 10. Click "Add Redirect", paste the copied URL and click "Save"
