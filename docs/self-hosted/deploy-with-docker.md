@@ -51,12 +51,23 @@ As it can be seen from the docker compose file, Astuto consists of two services:
 
 In `docker-compose.yml`, set the following environment variables to suit your needs:
 
-| **Environment variable** | **Description**                                                                                          |
-|--------------------------|----------------------------------------------------------------------------------------------------------|
-| POSTGRES_USER            | Username for the Postgres database                                                                       |
-| POSTGRES_PASSWORD        | Password for the Postgres database                                                                       |
-| BASE_URL                 | The base URL from where the website will be served                                                       |
-| SECRET_KEY_BASE          | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm)) |
+| **Environment variable**       | **Description**                                                                                               |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------|
+| POSTGRES_USER                  | Username for the Postgres database                                                                            |
+| POSTGRES_PASSWORD              | Password for the Postgres database                                                                            |
+| BASE_URL                       | The base URL from where the website will be served                                                            |
+| SECRET_KEY_BASE                | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))      |
+| EMAIL_CONFIRMATION             | Set it to "true" to enable email confirmation for new user registrations                                      |
+| EMAIL_DELIVERY_METHOD          | Possible values: "smtp". If you don't want to configure an email delivery method, don't define this variable. |
+| EMAIL_SMTP_HOST                | Hostname of your SMTP server                                                                                  |
+| EMAIL_SMTP_PORT                | Port of your SMTP server (optional, defaults to: 25)                                                          |
+| EMAIL_SMTP_USER                | Username for your SMTP server                                                                                 |
+| EMAIL_SMTP_PASS                | Password for your SMTP server                                                                                 |
+| EMAIL_SMTP_HELO_DOMAIN         | HELO domain (optional, defaults to: nil)                                                                      |
+| EMAIL_SMTP_AUTH                | SMTP server authentication type (optional, defaults to: plain)                                                |
+| EMAIL_SMTP_TLS                 | Enables the SMTP connection to use SMTP/TLS (optional, defaults to: nil)                                      |
+| EMAIL_SMTP_OPENSSL_VERIFY_MODE | Set how OpenSSL checks the certificate when using TLS (optional, defaults to: nil)                            |
+| EMAIL_SMTP_STARTTLS_AUTO       | Detects if STARTTLS is enabled in your SMTP server and starts to use it (optional, defaults to: true)         |
 
 :::caution
 
