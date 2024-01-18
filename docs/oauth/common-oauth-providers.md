@@ -18,12 +18,12 @@ This page contains tutorials for configuring some common OAuth providers.
    - **Name**: Google
    - **Client ID**: the Client ID you took note of
    - **Client Secret**: the Client Secret you took note of
-   - **Authorize URL**: https://accounts.google.com/o/oauth2/v2/auth
-   - **Token URL**: https://accounts.google.com/o/oauth2/token
-   - **Scope**: https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
-   - **Profile URL**: https://www.googleapis.com/oauth2/v2/userinfo
-   - **JSON path to user email**: email
-   - **JSON path to user name**: name
+   - **Authorize URL**: `https://accounts.google.com/o/oauth2/v2/auth`
+   - **Token URL**: `https://accounts.google.com/o/oauth2/token`
+   - **Scope**: `https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile`
+   - **Profile URL**: `https://www.googleapis.com/oauth2/v2/userinfo`
+   - **JSON path to user email**: `email`
+   - **JSON path to user name**: `name`
 8. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Google OAuth
 9. On Cloud Console, edit the newly created OAuth Client
 10. Under "Authorised redirect URIs", click "Add URI", paste the copied URL and click "Save"
@@ -41,13 +41,42 @@ This page contains tutorials for configuring some common OAuth providers.
    - **Name**: Discord
    - **Client ID**: the Application ID you took note of
    - **Client Secret**: the Client Secret you took note of
-   - **Authorize URL**: https://discord.com/oauth2/authorize
-   - **Token URL**: https://discord.com/api/oauth2/token
-   - **Scope**: email
-   - **Profile URL**: https://discord.com/api/users/@me
-   - **JSON path to user email**: email
-   - **JSON path to user name**: username
+   - **Authorize URL**: `https://discord.com/oauth2/authorize`
+   - **Token URL**: `https://discord.com/api/oauth2/token`
+   - **Scope**: `email`
+   - **Profile URL**: `https://discord.com/api/users/@me`
+   - **JSON path to user email**: `email`
+   - **JSON path to user name**: `username`
 8. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Discord OAuth
 9. On Discord, navigate again to "OAuth2 > General"
 10. Click "Add Redirect", paste the copied URL and click "Save"
 11. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
+
+## GitHub
+
+:::info Username cannot be fetched from GitHub
+
+GitHub requires OAuth clients to request emails from [an endpoint](https://api.github.com/user/emails) and usernames from [another endpoint](https://api.github.com/user). Since the Astuto OAuth workflow works with just one endpoint, we will only fetch the email.
+
+:::
+
+1. Navigate to https://github.com/settings/applications/new
+2. Type the name of your application (e.g. "Astuto")
+3. Type your homepage URL
+4. Since we do not have a callback URL yet, enter the homepage URL again. We will edit it later.
+5. Click "Register application"
+6. Click "Generate client secret", then take note of "Client ID" and "Client secret"
+7. On Astuto, navigate to "Site Settings > Authentication" and click "New"
+8. Fill the form with the following values and click "Save":
+   - **Name**: GitHub
+   - **Client ID**: the Client ID you took note of
+   - **Client Secret**: the Client Secret you took note of
+   - **Authorize URL**: `https://github.com/login/oauth/authorize`
+   - **Token URL**: `https://github.com/login/oauth/access_token`
+   - **Scope**: `user`
+   - **Profile URL**: `https://api.github.com/user/emails`
+   - **JSON path to user email**: `[0].email`
+9. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the GitHub OAuth
+10. On GitHub, on the OAuth page, scroll all the way down. Paste the copied URL to "Authorization callback URL"
+11. Click "Update application"
+12. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
