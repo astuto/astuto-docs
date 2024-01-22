@@ -60,7 +60,7 @@ GitHub requires OAuth clients to request emails from [an endpoint](https://api.g
 
 :::
 
-1. Navigate to https://github.com/settings/applications/new
+1. Navigate to https://github.com/settings/developers and click "New OAuth App"
 2. Type the name of your application (e.g. "Astuto")
 3. Type your homepage URL
 4. Since we do not have a callback URL yet, enter the homepage URL again. We will edit it later.
