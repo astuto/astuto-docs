@@ -57,7 +57,6 @@ In `docker-compose.yml`, set the following environment variables to suit your ne
 | POSTGRES_PASSWORD              | Password for the Postgres database                                                                            |
 | BASE_URL                       | The base URL from where the website will be served                                                            |
 | SECRET_KEY_BASE                | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))      |
-| EMAIL_CONFIRMATION             | Set it to "true" to enable email confirmation for new user registrations                                      |
 | EMAIL_DELIVERY_METHOD          | Possible values: "smtp". If you don't want to configure an email delivery method, don't define this variable. |
 | EMAIL_SMTP_HOST                | Hostname of your SMTP server                                                                                  |
 | EMAIL_SMTP_PORT                | Port of your SMTP server (optional, defaults to: 25)                                                          |
