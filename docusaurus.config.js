@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Astuto Docs',
+  title: 'Astuto Documentation',
   tagline: 'Astuto Docs Tagline',
   favicon: 'img/favicon.ico',
 
@@ -58,8 +58,13 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
-        title: 'Astuto Docs',
+        title: 'Astuto Documentation',
         logo: {
           alt: 'Astuto Logo',
           src: 'img/logo.png',
@@ -70,7 +75,7 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Most useful pages',
+            title: 'Useful pages',
             items: [
               {
                 label: 'Deploy with Docker',
@@ -83,11 +88,7 @@ const config = {
               {
                 label: 'Common OAuth Providers',
                 to: '/oauth/common-oauth-providers',
-              },
-              {
-                label: 'Humane Features',
-                to: '/category/humane-features',
-              },
+              }
             ],
           },
           {
