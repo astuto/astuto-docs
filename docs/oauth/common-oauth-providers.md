@@ -29,6 +29,29 @@ This page contains tutorials for configuring some common OAuth providers.
 10. Under "Authorised redirect URIs", click "Add URI", paste the copied URL and click "Save"
 11. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
 
+## Facebook
+
+1. Navigate to https://developers.facebook.com/apps/creation/, create a new project and follow the instructions
+2. Then, from your project dashboard, in the lower left corner, click "App settings" and then "Basic"
+3. Take note of the "App ID" and "App secret"
+4. On Astuto, navigate to "Site Settings > Authentication" and click "New"
+5. Fill the form with the following values and click "Save":
+   - **Name**: Facebook
+   - **Client ID**: the App ID you took note of
+   - **Client Secret**: the App Secret you took note of
+   - **Authorize URL**: `https://www.facebook.com/v19.0/dialog/oauth`
+   - **Token URL**: `https://graph.facebook.com/v19.0/oauth/access_token`
+   - **Scope**: `email`
+   - **Profile URL**: `https://graph.facebook.com/v19.0/me?fields=email,name`
+   - **JSON path to user email**: `email`
+   - **JSON path to user name**: `name`
+6. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Facebook OAuth
+7. Then, from your Facebook project dashboard, in the left sidebar, click "Use cases" and, on the right of "Authentication and account creation", click the "Customize" button
+8. Add "email" under "Permissions" if not already activated
+9. Click "Go to settings" button
+10. In "Valid OAuth Redirect URIs" paste the copied URL and click "Save changes"
+11. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
+
 ## Discord
 
 1. Navigate to https://discord.com/developers/applications and click "New Application"
