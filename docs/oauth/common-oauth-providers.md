@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Common OAuth Providers
@@ -77,9 +77,9 @@ This page contains tutorials for configuring some common OAuth providers.
 
 ## GitHub
 
-:::info Username cannot be fetched from GitHub
+:::info This is an advanced configuration
 
-GitHub requires OAuth clients to request emails from [an endpoint](https://api.github.com/user/emails) and usernames from [another endpoint](https://api.github.com/user). Since the Astuto OAuth workflow works with just one endpoint, we will only fetch the email.
+If you don't understand what's going on in the following configuration, you may want to take a look at the [advanced OAuth configuration instructions](./oauth-configuration-advanced.md#requesting-user-data-from-multiple-endpoints).
 
 :::
 
@@ -97,8 +97,9 @@ GitHub requires OAuth clients to request emails from [an endpoint](https://api.g
    - **Authorize URL**: `https://github.com/login/oauth/authorize`
    - **Token URL**: `https://github.com/login/oauth/access_token`
    - **Scope**: `user`
-   - **Profile URL**: `https://api.github.com/user/emails`
-   - **JSON path to user email**: `[0].email`
+   - **Profile URL**: `https://api.github.com/user/emails,https://api.github.com/user`
+   - **JSON path to user email**: `profile0[0].email`
+   - **JSON path to user name**: `profile1.name`
 9. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the GitHub OAuth
 10. On GitHub, on the OAuth page, scroll all the way down. Paste the copied URL to "Authorization callback URL"
 11. Click "Update application"
