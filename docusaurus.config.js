@@ -79,7 +79,7 @@ const config = {
             items: [
               {
                 label: 'Deploy with Docker',
-                to: '/self-hosted/deploy-with-docker',
+                to: '/deploy-docker',
               },
               {
                 label: 'OAuth Configuration Basics',
@@ -88,6 +88,10 @@ const config = {
               {
                 label: 'Common OAuth Providers',
                 to: '/oauth/common-oauth-providers',
+              },
+              {
+                label: 'Custom Domain Configuration',
+                to: '/custom-domain',
               }
             ],
           },
