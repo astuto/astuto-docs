@@ -66,7 +66,7 @@ This page contains tutorials for configuring some common OAuth providers.
    - **Client Secret**: the Client Secret you took note of
    - **Authorize URL**: `https://discord.com/oauth2/authorize`
    - **Token URL**: `https://discord.com/api/oauth2/token`
-   - **Scope**: `email`
+   - **Scope**: `email identify`
    - **Profile URL**: `https://discord.com/api/users/@me`
    - **JSON path to user email**: `email`
    - **JSON path to user name**: `username`
