@@ -97,7 +97,7 @@ If you don't understand what's going on in the following configuration, you may 
    - **Authorize URL**: `https://github.com/login/oauth/authorize`
    - **Token URL**: `https://github.com/login/oauth/access_token`
    - **Scope**: `user`
-   - **Profile URL**: `https://api.github.com/user/emails,https://api.github.com/user`
+   - **Profile URL**: `https://api.github.com/user/emails;https://api.github.com/user`
    - **JSON path to user email**: `profile0[0].email`
    - **JSON path to user name**: `profile1.name`
 9. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the GitHub OAuth
