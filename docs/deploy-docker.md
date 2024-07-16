@@ -21,11 +21,10 @@ Try Astuto paid plan! You get a 7-day free trial without entering any payment me
 Create an empty folder and, inside that folder, create a file named `docker-compose.yml` with the following content:
 
 ```yml title="docker-compose.yml"
-version: '3.4'
 services:
   db:
     image: postgres:14.5
-    environment:
+    environment: &db-env
       POSTGRES_USER: yourpostgresusername
       POSTGRES_PASSWORD: yourpostgrespassword
     volumes:
@@ -33,8 +32,7 @@ services:
   web:
     image: riggraz/astuto:latest
     environment:
-      POSTGRES_USER: yourpostgresusername
-      POSTGRES_PASSWORD: yourpostgrespassword
+      <<: *db-env
       BASE_URL: http://yourwebsite.com
       SECRET_KEY_BASE: yoursecretkeybase
     ports:
@@ -48,32 +46,22 @@ volumes:
 
 As it can be seen from the docker compose file, Astuto consists of two services: `web`, which contains the web application, and `db`, which contains a Postgres instance.
 
-## 2. Edit the environment variables in the Docker Compose file
+## 2. Edit environment variables
 
 In `docker-compose.yml`, set the following environment variables to suit your needs:
 
-| **Environment variable**       | **Description**                                                                                               |
-|--------------------------------|---------------------------------------------------------------------------------------------------------------|
-| POSTGRES_USER                  | Username for the Postgres database                                                                            |
-| POSTGRES_PASSWORD              | Password for the Postgres database                                                                            |
-| BASE_URL                       | The base URL from where the website will be served                                                            |
-| SECRET_KEY_BASE                | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))      |
-| EMAIL_DELIVERY_METHOD          | Possible values: "smtp". If you don't want to configure an email delivery method, don't define this variable. |
-| EMAIL_SMTP_HOST                | Hostname of your SMTP server                                                                                  |
-| EMAIL_SMTP_PORT                | Port of your SMTP server (optional, defaults to: 25)                                                          |
-| EMAIL_SMTP_USER                | Username for your SMTP server                                                                                 |
-| EMAIL_SMTP_PASS                | Password for your SMTP server                                                                                 |
-| EMAIL_SMTP_HELO_DOMAIN         | HELO domain (optional, defaults to: nil)                                                                      |
-| EMAIL_SMTP_AUTH                | SMTP server authentication type (optional, defaults to: plain)                                                |
-| EMAIL_SMTP_TLS                 | Enables the SMTP connection to use SMTP/TLS (optional, defaults to: nil)                                      |
-| EMAIL_SMTP_OPENSSL_VERIFY_MODE | Set how OpenSSL checks the certificate when using TLS (optional, defaults to: nil)                            |
-| EMAIL_SMTP_STARTTLS_AUTO       | Detects if STARTTLS is enabled in your SMTP server and starts to use it (optional, defaults to: true)         |
-
-:::caution
-
-Remember to set `POSTGRES_USER` and `POSTGRES_PASSWORD` in both services (`web` and `db`)!
-
-:::
+| **Environment variable**  | **Description**                                                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| POSTGRES_USER             | Username for the Postgres database                                                                                                                         |
+| POSTGRES_PASSWORD         | Password for the Postgres database                                                                                                                         |
+| BASE_URL                  | The base URL from where the website will be served                                                                                                         |
+| SECRET_KEY_BASE           | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))                                                   |
+| EMAIL_DELIVERY_METHOD     | Possible values: "smtp". If you don't want to configure an email delivery method, don't define this variable.                                              |
+| EMAIL_SMTP_HOST           | Hostname of your SMTP server                                                                                                                               |
+| EMAIL_SMTP_PORT           | Port of your SMTP server (optional, defaults to: 25)                                                                                                       |
+| EMAIL_SMTP_USER           | Username for your SMTP server (optional, don't define this variable if your SMTP server doesn't require authentication)                                    |
+| EMAIL_SMTP_PASS           | Password for your SMTP server (optional, don't define this variable if your SMTP server doesn't require authentication)                                    |
+| *other SMTP variables...* | A full list of environment variables for email configuration and other helpful tips can be found at [this page](/smtp-configuration) |
 
 ## 3. Run
 
