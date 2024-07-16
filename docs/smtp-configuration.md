@@ -45,7 +45,7 @@ EMAIL_SMTP_PORT=25
 
 ## SMTP environment variables
 
-The following table contains all the available environment variables you can set to configure SMTP.
+The following table contains all the available environment variables you can set to configure SMTP. All these environment variable must be set on the `web` Docker service only.
 
 | **Environment variable**       | **Description**                                                                                                     |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------|

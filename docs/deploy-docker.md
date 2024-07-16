@@ -44,25 +44,23 @@ volumes:
   dbdata:
 ```
 
-As it can be seen from the docker compose file, Astuto consists of two services: `web`, which contains the web application, and `db`, which contains a Postgres instance.
-
 ## 2. Edit environment variables
 
 In `docker-compose.yml`, set the following environment variables to suit your needs:
 
-| **Environment variable**  | **Description**                                                                                                                      |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| POSTGRES_USER             | Username for the Postgres database                                                                                                   |
-| POSTGRES_PASSWORD         | Password for the Postgres database                                                                                                   |
-| BASE_URL                  | The base URL from where the website will be served                                                                                   |
-| SECRET_KEY_BASE           | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))                             |
-| EMAIL_DELIVERY_METHOD     | Possible values: "smtp". If you don't want to configure an email delivery method, don't define this variable.                        |
-| EMAIL_SMTP_HOST           | Hostname of your SMTP server                                                                                                         |
-| EMAIL_SMTP_PORT           | Port of your SMTP server (optional, defaults to: 25)                                                                                 |
-| EMAIL_SMTP_USER           | Username for your SMTP server (optional, don't define this variable if your SMTP server doesn't require authentication)              |
-| EMAIL_SMTP_PASS           | Password for your SMTP server (optional, don't define this variable if your SMTP server doesn't require authentication)              |
-| *other SMTP variables...* | A full list of environment variables for email configuration and other helpful tips can be found at [this link](/smtp-configuration) |
-| RAILS_LOG_TO_STDOUT       | Whether to log to stdout or not. Useful for debugging purposes. (optional, defaults to false in production)                          |
+| **Environment variable**  | **Service** | **Description**                                                                                                                      |
+|---------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| POSTGRES_USER             | db          | Username for the Postgres database                                                                                                   |
+| POSTGRES_PASSWORD         | db          | Password for the Postgres database                                                                                                   |
+| BASE_URL                  | web         | The base URL from where the website will be served                                                                                   |
+| SECRET_KEY_BASE           | web         | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))                             |
+| EMAIL_DELIVERY_METHOD     | web         | Possible values: "smtp". If you don't want to configure an email delivery method, don't define this variable.                        |
+| EMAIL_SMTP_HOST           | web         | Hostname of your SMTP server                                                                                                         |
+| EMAIL_SMTP_PORT           | web         | Port of your SMTP server (optional, defaults to: 25)                                                                                 |
+| EMAIL_SMTP_USER           | web         | Username for your SMTP server (optional, don't define this variable if your SMTP server doesn't require authentication)              |
+| EMAIL_SMTP_PASS           | web         | Password for your SMTP server (optional, don't define this variable if your SMTP server doesn't require authentication)              |
+| *other SMTP variables...* |             | A full list of environment variables for email configuration and other helpful tips can be found at [this link](/smtp-configuration) |
+| RAILS_LOG_TO_STDOUT       | web         | Whether to log to stdout or not. Useful for debugging purposes. (optional, defaults to false in production)                          |
 
 ## 3. Run
 
