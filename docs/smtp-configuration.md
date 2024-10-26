@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: /smtp-configuration
 ---
 
-# SMTP Configuration
+# 📬 SMTP Configuration
 
 This page provides information on configuring Astuto to work with a SMTP server. Some simple examples will be shown alongside possible problems that might arise. In the end, a full list of available environment variables for SMTP configuration is provided.
 

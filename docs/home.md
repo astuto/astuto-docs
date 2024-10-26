@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Introduction
+# 🏠 Introduction
 
 Welcome to the Astuto documentation. What are you looking for?
 

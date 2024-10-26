@@ -3,7 +3,7 @@ sidebar_position: 5
 slug: /custom-domain
 ---
 
-# Custom Domain Configuration
+# ⚙️ Custom Domain Configuration
 
 You can configure a custom domain (e.g. `feedback.yoursite.com`) to access Astuto instead of the default `subdomain.astuto.io`.
 
