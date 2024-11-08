@@ -12,3 +12,4 @@ Welcome to the Astuto documentation. What are you looking for?
 - [Configure custom OAuth providers](/oauth/oauth-configuration-basics)
 - [Customize Astuto appearance](/appearance-customization)
 - [Configure a custom domain](/custom-domain)
+- [API documentation](/api)
