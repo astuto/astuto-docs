@@ -48,3 +48,8 @@ a.card { text-decoration: none; }
   background-color: var(--ifm-menu-color-background-active);
   border-radius: 0.25rem;
 }
+
+/* Hide Redocly logo in API documentation */
+a[href="https://redocly.com/redoc/"] {
+  display: none;
+}
