@@ -57,7 +57,7 @@ const config = {
         // Plugin Options for loading OpenAPI files
         specs: [
           {
-            spec: 'http://localhost:3000/api-docs/v1/swagger.yaml',
+            spec: 'https://api.astuto.io/api-docs/v1/swagger.yaml',
             route: '/api/',
           },
         ],
