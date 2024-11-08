@@ -3,7 +3,7 @@ sidebar_position: 6
 slug: /appearance-customization
 ---
 
-# Appearance Customization
+# 🎨 Appearance Customization
 
 Under "Site settings > Appearance" you can override CSS variables and define your own custom CSS styles.
 

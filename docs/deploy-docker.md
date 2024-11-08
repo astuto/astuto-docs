@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: /deploy-docker
 ---
 
-# Deploy with Docker
+# 🐳 Deploy with Docker
 
 :::info Want to avoid deployment and maintenance?
 

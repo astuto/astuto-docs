@@ -51,6 +51,22 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        // Plugin Options for loading OpenAPI files
+        specs: [
+          {
+            spec: 'https://api.astuto.io/api-docs/v1/swagger.yaml',
+            route: '/api/',
+          },
+        ],
+        // Theme Options for modifying how redoc renders them
+        theme: {
+          primaryColor: '#000000',
+        },
+      },
+    ],
   ],
 
   themeConfig:
@@ -69,7 +85,20 @@ const config = {
           alt: 'Astuto Logo',
           src: 'img/logo.png',
         },
-        items: [],
+        items: [
+          {
+            label: '📚 Documentation',
+            to: '/',
+            position: 'left',
+            activeBaseRegex: '^(?!/api)', // every page except the api page
+          },
+          {
+            label: '💻 API Documentation',
+            to: '/api',
+            position: 'left',
+            activeBaseRegex: 'api/*',
+          },
+        ],
       },
       footer: {
         style: 'light',
@@ -120,9 +149,17 @@ const config = {
             title: 'About',
             items: [
               {
+                label: 'Astuto Documentation',
+                to: '/',
+              },
+              {
+                label: 'API Documentation',
+                to: '/api/',
+              },
+              {
                 label: 'Astuto Home Page',
                 to: 'https://astuto.io',
-              },
+              }
             ],
           },
         ],
