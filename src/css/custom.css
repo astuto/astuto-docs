@@ -51,5 +51,5 @@ a.card { text-decoration: none; }
 
 /* Hide Redocly logo in API documentation */
 a[href="https://redocly.com/redoc/"] {
-  display: none;
+  display: none !important;
 }
