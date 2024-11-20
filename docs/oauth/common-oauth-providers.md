@@ -116,13 +116,14 @@ If you don't understand what's going on in the following configuration, you may 
 1. Navigate to https://aad.portal.azure.com/ and find "Manage -> App registrations"
 2. Click "New registration"
 3. Type the name of your application (e.g. "Astuto")
-4. Choose which kind of users allowed to login. Select Single tenant, if only use internally in organisation
+4. Choose which kind of users allowed to login. Select Single tenant, if you only need to provide access to users in our organisation
 5. The Redirect URI will entered later
 6. Click "Register"
-7. On the new application frontpage take not of the "Application ID" and "Directory (Tenant) ID" shown
+7. On the new application frontpage take note of the "Application ID" and "Directory (Tenant) ID" shown
+8. Also click the "Endpoints" link at the top, where you can view the Authorize URL and Token URL.
 9. Navigate to "Certificates & secrets" in left menu and click "New Client Secret"
 10. Give the new created secret a description and set an expire date.
-11. Click "Add" and note the secret value. 
+11. Click "Add" and note the secret value. It cannot be displayed again.
 12. On Astuto, navigate to "Site Settings > Authentication" and click "New"
 13. Fill the form with the following values and click "Save":
    - **Name**: Microsoft
@@ -134,7 +135,7 @@ If you don't understand what's going on in the following configuration, you may 
    - **Profile URL**: `https://graph.microsoft.com/oidc/userinfo`
    - **JSON path to user email**: `email`
    - **JSON path to user name**: `name`
-11. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Microsoft OAuth
-12. On Microsoft Entra, navigate again the created app registration in click on "Authentication"
-13. Click "Add platform", and choose "web" and paste the copied URL into Redirect URIs and click "Configure"
-14. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
+14. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Microsoft OAuth
+15. On Microsoft Entra, navigate again the created app registration in click on "Authentication"
+16. Click "Add platform", and choose "web" and paste the copied URL into Redirect URIs and click "Configure"
+17. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
