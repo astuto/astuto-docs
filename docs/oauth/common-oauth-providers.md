@@ -110,3 +110,31 @@ If you don't understand what's going on in the following configuration, you may 
 10. On GitHub, on the OAuth page, scroll all the way down. Paste the copied URL to "Authorization callback URL"
 11. Click "Update application"
 12. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
+
+## Microsoft Entra ID (Azure AD)
+
+1. Navigate to https://aad.portal.azure.com/ and find "Manage -> App registrations"
+2. Click "New registration"
+3. Type the name of your application (e.g. "Astuto")
+4. Choose which kind of users allowed to login. Select Single tenant, if only use internally in organisation
+5. The Redirect URI will entered later
+6. Click "Register"
+7. On the new application frontpage take not of the "Application ID" and "Directory (Tenant) ID" shown
+9. Navigate to "Certificates & secrets" in left menu and click "New Client Secret"
+10. Give the new created secret a description and set an expire date.
+11. Click "Add" and note the secret value. 
+12. On Astuto, navigate to "Site Settings > Authentication" and click "New"
+13. Fill the form with the following values and click "Save":
+   - **Name**: Microsoft
+   - **Client ID**: the Application ID you took note of
+   - **Client Secret**: the Client Secret you took note of
+   - **Authorize URL**: `https://login.microsoftonline.com/<TenantID>/oauth2/v2.0/authorize`
+   - **Token URL**: `https://login.microsoftonline.com/<TenantID>/oauth2/v2.0/token`
+   - **Scope**: `openid`
+   - **Profile URL**: `https://graph.microsoft.com/oidc/userinfo`
+   - **JSON path to user email**: `email`
+   - **JSON path to user name**: `name`
+11. On Astuto, navigate to "Site Settings > Authentication" and click "Copy URL" next to the Microsoft OAuth
+12. On Microsoft Entra, navigate again the created app registration in click on "Authentication"
+13. Click "Add platform", and choose "web" and paste the copied URL into Redirect URIs and click "Configure"
+14. On Astuto, [test](./oauth-configuration-basics.md#oauth-test) the newly configured provider
