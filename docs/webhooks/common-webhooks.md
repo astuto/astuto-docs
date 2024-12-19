@@ -88,7 +88,7 @@ To further customize your GitHub integration or create new ones, we suggest to r
 
 To create a webhook for GitHub integration, we need to create a GitHub personal access token (PAT).
 
-1. Navigate to GitHub [Developer Settings](https://github.com/settings/apps), click "Personal access tokens" and then click "Fine-grained tokens"
+1. Navigate to [GitHub Developer Settings](https://github.com/settings/apps), click "Personal access tokens" and then click "Fine-grained tokens"
 2. Click "Generate new token"
 3. Fill in the following fields: "Token name", "Resource owner", "Expiration", "Repository access", "Permissions". In particular, under "Permissions > Repository permissions", set access of "Issues" to "Read and Write".
 4. Click "Generate token" and take note of the personal access token generated
