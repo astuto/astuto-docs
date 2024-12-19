@@ -11,7 +11,7 @@ This page contains tutorials for configuring some common webhook integrations.
 In this tutorial, we are going to create a webhook that automatically sends a message to a Slack channel every time a new feedback is submitted to Astuto. However, there are many more Slack integrations you can create (e.g. by changing the Slack endpoint URL or the webhook's trigger).
 
 :::info Slack API documentation
-To further customize your Slack integration, we suggest to read [Slack REST API](https://api.slack.com/web) for a comprehensive list of endpoints and parameters.
+To further customize your Slack integration or create new ones, we suggest to read [Slack REST API](https://api.slack.com/web) for a comprehensive list of endpoints and parameters.
 :::
 
 To create a webhook for Slack integration, we need to create a Slack app and add it to a Slack workspace.
@@ -32,7 +32,7 @@ To create a webhook for Slack integration, we need to create a Slack app and add
       ```
       {
         "channel": <ID of your Slack Channel>,
-        "text": "{{ post_author.full_name }} posted new feedback '{{ post.title }}'! Link: {{ post.url }}"
+        "text": "{{ post_author.full_name }} posted new feedback '{{ post.title | escape_json }}'! Link: {{ post.url }}"
       }
       ```
     - **Header 1 key**: `Content-Type`
@@ -46,7 +46,7 @@ To create a webhook for Slack integration, we need to create a Slack app and add
 In this tutorial, we are going to create a webhook that automatically creates a new Trello Card in a specific Trello List every time a new feedback is submitted to Astuto. However, there are many more Trello integrations you can create (e.g. by changing the Trello endpoint URL or the webhook's trigger).
 
 :::info Trello API documentation
-To further customize your Trello integration, we suggest to read [Trello REST API](https://developer.atlassian.com/cloud/trello/rest) for a comprehensive list of endpoints and parameters.
+To further customize your Trello integration or create new ones, we suggest to read [Trello REST API](https://developer.atlassian.com/cloud/trello/rest) for a comprehensive list of endpoints and parameters.
 :::
 
 To create a webhook for Trello integration, we need to create a Trello Power-Up.
@@ -68,8 +68,8 @@ To create a webhook for Trello integration, we need to create a Trello Power-Up.
     - **HTTP body**: (change to suit your needs)
       ```
       {
-        "name": "{{ post.title }}",
-        "desc": "{{ post.description }}",
+        "name": "{{ post.title | escape_json }}",
+        "desc": "{{ post.description | escape_json }}",
         "urlSource": "{{ post.url }}",
         "idList": "<YOUR_ID_LIST>"
       }
@@ -77,3 +77,38 @@ To create a webhook for Trello integration, we need to create a Trello Power-Up.
     - **Header 1 key**: `Content-Type`
     - **Header 1 value**: `application/json`
 10. [Test](./webhooks-introduction.md#test-your-webhook) your newly configured webhook. If everything is okay, you can Enable the webhook.
+
+## GitHub
+
+In this tutorial, we are going to create a webhook that automatically creates a new GitHub issue in a specific GitHub repository every time a new feedback is submitted to Astuto. However, there are many more GitHub integrations you can create (e.g. by changing the GitHub endpoint URL or the webhook's trigger).
+
+:::info GitHub API documentation
+To further customize your GitHub integration or create new ones, we suggest to read [GitHub REST API](https://docs.github.com/en/rest/quickstart) for a comprehensive list of endpoints and parameters.
+:::
+
+To create a webhook for GitHub integration, we need to create a GitHub personal access token (PAT).
+
+1. Navigate to GitHub [Developer Settings](https://github.com/settings/apps), click "Personal access tokens" and then click "Fine-grained tokens"
+2. Click "Generate new token"
+3. Fill in the following fields: "Token name", "Resource owner", "Expiration", "Repository access", "Permissions". In particular, under "Permissions > Repository permissions", set access of "Issues" to "Read and Write".
+4. Click "Generate token" and take note of the personal access token generated
+5. Navigate to your Astuto feedback space, then go to "Site settings > Webhooks" and click "New"
+6. Fill the form with the following values and click "Save":
+    - **Name**: a name of your choice
+    - **Description**: a description of your choice (optional)
+    - **Trigger**: "New post" (you can change it to suit your needs)
+    - **HTTP method**: POST
+    - **URL**: `https://api.github.com/repos/<OWNER>/<REPOSITORY>/issues`
+    - **HTTP body**: (change to suit your needs)
+      ```
+      {
+        "title": "{{ post.title | escape_json }}",
+        "body": "{{ post.description | escape_json }}"
+      }
+      ```
+    - **Header 1 key**: `Authorization`
+    - **Header 1 value**: `Bearer <YOUR_TOKEN>`
+    - **Header 2 key**: `accept`
+    - **Header 2 value**: `application/vnd.github+json`
+    - **Header 3 key**: `X-GitHub-Api-Version`
+    - **Header 3 value**: `2022-11-28`

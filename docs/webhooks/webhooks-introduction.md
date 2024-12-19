@@ -46,6 +46,10 @@ You can access the available variables for each trigger in the "Select a templat
 
 Liquid also supports tags and filters, which can be used to manipulate the data before sending it to the external tool. You can find some of the available tags and filters in the "Select a template variable..." dropdown, but for a more comprehensive list, you should refer to the [official Liquid documentation](https://shopify.github.io/liquid/basics/introduction/).
 
+:::info The escape_json filter
+The `escape_json` filter is a custom Liquid filter defined by Astuto, so you won't find it in the Liquid documentation. However, it is really useful to escape feedback titles and descriptions: since they can contain double quotes (") and you usually send requests with JSON that also uses double quotes to enclose keys and values, this filter is essential to escape quotes and avoid any parsing errors. Take a look at [Common Webhooks](common-webhooks) page to see the `escape_json` filter in action.
+:::
+
 ## Test your webhook
 
 Before enabling your webhook, be sure to test it to check if it works as expected. In order to test a webhook, click the "Test" button from the "Site settings > Webhooks" page. A summary page of the webhook response will be shown, containing the HTTP status code and body of the response.
