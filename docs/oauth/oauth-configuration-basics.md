@@ -8,7 +8,7 @@ This page offers an overview of the available settings for configuring custom OA
 
 ## OAuth Configuration
 
-You can create a new OAuth provider from "Site Settings > Authentication > New".
+You can create a new OAuth provider from the page "Site Settings > Authentication", by clicking on the "New" button.
 
 You need to fill the following fields:
 
