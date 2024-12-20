@@ -103,7 +103,7 @@ To create a webhook for Slack integration, we need to create a Slack app and add
     - **HTTP body**: (change to suit your needs)
       ```
       {
-        "channel": <ID of your Slack Channel>,
+        "channel": "<SLACK_CHANNEL_ID>",
         "text": "{{ post_author.full_name }} posted new feedback '{{ post.title | escape_json }}'! Link: {{ post.url }}"
       }
       ```
