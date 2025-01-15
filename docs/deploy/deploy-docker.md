@@ -51,8 +51,9 @@ In `docker-compose.yml`, set the following environment variables to suit your ne
 
 | **Environment variable**  | **Service** | **Description**                                                                                                                                                                 |
 |---------------------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| POSTGRES_USER             | db          | Username for the Postgres database                                                                                                                                              |
-| POSTGRES_PASSWORD         | db          | Password for the Postgres database                                                                                                                                              |
+| POSTGRES_USER             | db, web     | Username for the Postgres database                                                                                                                                              |
+| POSTGRES_PASSWORD         | db, web     | Password for the Postgres database                                                                                                                                              |
+| POSTGRES_HOST             | web         | Container name of the Postgres database. Default value is 'db'                                                                                                                                              |
 | BASE_URL                  | web         | The base URL from where the website will be served                                                                                                                              |
 | SECRET_KEY_BASE           | web         | A secure 64 characters secret (you can generate one from [this site](https://www.grc.com/passwords.htm))                                                                        |
 | ACTIVE_JOB_BACKEND        | web         | Which job scheduler to use for background jobs (optional, possible values: "sidekiq" or "async", defaults to "async"). To setup Sidekiq, see [this page](/deploy-with-sidekiq). |
