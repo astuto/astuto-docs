@@ -6,12 +6,6 @@ sidebar_position: 3
 
 This page contains tutorials for configuring some common OAuth providers.
 
-:::info Want to skip OAuth providers configuration?
-
-Try Astuto paid plan, which comes with Google, Facebook and GitHub already configured! You get a 7-day free trial without entering any payment method, then you pay as little as 15 €/month with annual subscription. [**Learn more**](https://astuto.io/?utm_campaign=docs_oauth&utm_source=docs.astuto.io) or [**start your 7-day trial now**](https://login.astuto.io/signup).
-
-:::
-
 ## Google
 
 1. Navigate to https://console.developers.google.com and create a new project
