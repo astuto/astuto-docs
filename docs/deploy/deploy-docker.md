@@ -5,12 +5,6 @@ slug: /deploy-docker
 
 # Deploy with Docker
 
-:::info Want to avoid deployment and maintenance?
-
-Try Astuto paid plan! You get a 7-day free trial without entering any payment method, then you pay as little as 15 €/month with annual subscription. [**Learn more**](https://astuto.io/?utm_campaign=docs_deploy&utm_source=docs.astuto.io) or [**start your 7-day trial now**](https://login.astuto.io/signup).
-
-:::
-
 ## 0. Requirements
 
 - Docker
